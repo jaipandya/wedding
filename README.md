@@ -18,26 +18,29 @@ Or install it yourself as:
 
 ## Usage
 
-Create a new wedding
+New wedding
 
-  # By default it would take config options from
-  # lib/wedding/default_config.rb, which can be overrridden
-  # by passing yoru own hash
-  wedding = Wedding.new
+    # By default it would take config options from
+    # lib/wedding/default_config.rb, which can be overrridden
+    # by passing yoru own hash
+    wedding = Wedding.new
 
-  # Print the invitation card
-  wedding.invitation
+Print the invitation card
 
-  # Open google maps location in the browser
-  # This requires you to be working on a graphical system
-  # with a presence of a web browser
-  wedding.map_location
+    wedding.invitation
 
-  # Access the groom 'object'
-  wedding.groom
+Open google maps location in the browser
+This requires you to be working on a graphical system
+with a presence of a web browser
+    wedding.map_location
 
-  # Access the bride 'object'
-  wedding.bride
+Access the groom 'object'
+    
+    wedding.groom
 
-  # RSVP for the event
-  wedding.rsvp
+Access the bride 'object'
+    
+    wedding.bride
+
+RSVP for the event
+    wedding.rsvp
