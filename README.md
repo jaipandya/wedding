@@ -32,6 +32,7 @@ Print the invitation card
 Open google maps location in the browser
 This requires you to be working on a graphical system
 with a presence of a web browser
+    
     wedding.map_location
 
 Access the groom 'object'
