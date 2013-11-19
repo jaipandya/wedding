@@ -10,12 +10,12 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jai Pandya"]
   spec.email         = ["jaipandya@gmail.com"]
   spec.description = <<-EOS
-What could be better than a gem for a wedding. This gem generates an invite for my wedding.
-Mostly made for fun, the gem is generic in nature that accepts a configuration object to
-work on.
+What could be better than a gem for a wedding. A fun experiment that generates 
+an invite for my wedding. The gem is generic in nature that accepts a configuration
+object to work on.
 EOS
   spec.summary       = %q{I created this gem for inviting friends to my wedding.}
-  spec.homepage      = "http://preritajai.com"
+  spec.homepage      = "http://github.com/jaipandya/wedding"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
