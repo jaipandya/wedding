@@ -1,4 +1,5 @@
 require 'wedding'
+require 'launchy'
 module Wedding
   
   # We have a new wedding taking place here
@@ -13,10 +14,18 @@ module Wedding
 
     desc 'location', 'Google maps link to the wedding venue'
     def location
-      puts Wedding.ceremony.location
+      puts map_location = Wedding.ceremony.location
+      answer = yes?('Do you want to open this link in browser? (yes/no)')
+      if (answer)
+        begin
+          Launchy.open(map_location)
+        rescue StandardError => e
+          puts "Sorry, you are probably not using a graphical terminal"
+        end
+      end
     end
 
-    desc 'rsvp', 'Information about RSVPing for the event'
+    desc 'rsvp', 'RSVP for the event'
     def rsvp
       puts Wedding.ceremony.rsvp
     end

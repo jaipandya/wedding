@@ -1,6 +1,9 @@
 # Wedding
 
-What could a ruby gem be better suited for?
+What could be a weddding without a gem?
+
+A fun experiment to invite my geeky friends
+via this ruby gem.
 
 ## Installation
 
@@ -18,20 +21,51 @@ Or install it yourself as:
 
 ## Usage
 
+### Command Line
+
+List all available commands
+
+    wedding
+
+Print a personalized wedding invitation
+
+    wedding invitation
+
+Glory words for the groom
+
+    wedding groom
+
+Glory words for the bride
+
+    wedding bride
+
+RSVP for the event
+
+    wedding rsvp
+
+Map location of the venue
+
+    wedding location
+
+### Public API
+
 New wedding
 
     # By default it would take config options from
-    # lib/wedding/default_config.rb, which can be overrridden
-    # by passing yoru own hash
+    # lib/wedding/default_config.rb, which can be overridden
+    # by passing your own hash
+
     wedding = Wedding.new
 
-Print the invitation card
+Returns invitation card string
 
     wedding.invitation
 
-Open google maps location in the browser
-This requires you to be working on a graphical system
-with a presence of a web browser
+Wedding venue coordinates
+
+    wedding.location
+
+Returns google maps URL of the venue
     
     wedding.map_location
 
@@ -43,5 +77,6 @@ Access the bride 'object'
     
     wedding.bride
 
-RSVP for the event
+RSVP information about the event
+
     wedding.rsvp

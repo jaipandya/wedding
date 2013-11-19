@@ -32,5 +32,6 @@ EOS
   spec.add_runtime_dependency 'launchy', '2.3.0'
   spec.add_runtime_dependency 'require_all', '~> 1.3.2'
   spec.add_runtime_dependency 'thor', '~> 0.18'
+  spec.add_runtime_dependency 'artii', '~> 2.0.3'
 
 end

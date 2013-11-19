@@ -1,8 +1,9 @@
 require 'cgi'
+require 'artii'
 
 module Wedding
   # The magic happens here
-  # Sing, dance, eat and enjpoy
+  # Sing, dance, eat and enjoy
   class Ceremony
 
     # Time to set the things in the right direction
@@ -14,6 +15,8 @@ module Wedding
       @location = config[:location]
       @date = (config[:date])
       @event_schedule = config[:event_schedule]
+
+      @artii = Artii::Base.new :font => 'slant'
     end
 
     # We need to access what we have set earlier
@@ -37,9 +40,12 @@ module Wedding
     # forms a pretty invitation card for the wedding
     def invitation
       invitation = %Q[
+#{print_ganesha}
 ========= Wedding invitation ==========
 
---------- #{groom.name} with #{bride.name} ---------
+#{@artii.asciify(groom.name)}  
+    with
+#{@artii.asciify(bride.name)}
 
 
 Hi #{`whoami`}
@@ -65,12 +71,37 @@ the invitation?
 
     end
 
+    # http://en.wikipedia.org/wiki/Ganesha
+    # In Hindu mythology it is a custom to start 
+    # anything new worshipping lord Ganesha
+    def print_ganesha
+      ganesh = %Q[
+                 _.!._           
+                /O*@*O\\          
+              <\\@(_)@/>          
+      ,;,   .--;`     `;--.   ,  
+      O@O_ /   |d     b|   \\ _hnn
+      | `/ \\   |       |   / \\` |
+      &&&&  :##;\\     /;##;  &&&&
+      |  \\ / `##/|   |##'  \\ /  |
+      \\   %%%%`</|   |#'`%%%%   /
+       '._|_ \\   |   |'  / _|_.' 
+         _/  /   \\   \\   \\  \\    
+        / (\\(     '.  '-._&&&&   
+       (  ()##,    o'--.._`\\-)   
+        '-():`##########'()()()  
+         /:::::/()`Y`()\\:::::\\   
+         \\::::( () | () )::::/   
+          `"""`\\().'.()/'"""`    
+          ]
+    end
+
     # RSVP for the event
     def rsvp
       invitation = %Q[
 You can RSVP for the event by sending an email to
 #{groom.name} (#{groom.email}) 
-or #{prerita.name} (#{prerita.email})
+or #{bride.name} (#{bride.email})
       ]
     end
   end

@@ -1,11 +1,15 @@
 module Wedding
+  # No wedding without a groom
   class Groom
+    # Get him ready for all pomp and show
     def initialize(config)
       self.name = config[:groom_name]
       self.about = config[:groom_about]
       self.occupation = config[:groom_occupation]
       self.email = config[:groom_email]
     end
+
+    # Overriding for pretty printing
     def to_s
       groom_gungaan = %Q[
 ========= Groom ==========

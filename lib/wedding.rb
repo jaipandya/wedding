@@ -1,10 +1,12 @@
 require 'launchy'
 require 'thor'
+require 'wedding/default_config'
 
+# Lets bring the bride, groom here and
+# ring the bells to start the ceremony
 require 'wedding/bride'
 require 'wedding/groom'
 require 'wedding/ceremony'
-require 'wedding/default_config'
 
 module Wedding
 

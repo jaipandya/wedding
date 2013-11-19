@@ -10,11 +10,11 @@ module Wedding
         :bride_about => "Banker, Traveller, Dancer, Painter, Dreamer",
         :bride_occupation => "Asst. Manager at Bank of Baroda",
         :bride_email => "preritayadav@gmail.com",
-        :location => "26° 53.415', 75° 48.466'",
+        :location => "+26° 52' 57.3024\", +75° 48' 24.75\"",
         :event_schedule => [
-          "7:00 pm Barats starts from Home",
-          "8:00 pm Barat reaches venue",
-          "12:00 pm Fere"
+          " 7:00 pm Barat starts from Home",
+          " 8:00 pm Barat reaches venue",
+          "12:00 pm Phere"
         ],
         :date => "29 November 2013"
       }
