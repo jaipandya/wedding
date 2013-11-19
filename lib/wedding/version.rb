@@ -1,4 +1,4 @@
 module Wedding
-  # No releases scheduled after this one
-  VERSION = "0.0.1"
+  # No major releases scheduled after this one
+  VERSION = "0.0.1" unless const_defined?(:VERSION)
 end

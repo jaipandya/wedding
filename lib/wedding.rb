@@ -1,14 +1,22 @@
 require 'launchy'
-require 'require_all'
-require_rel 'wedding'
+require 'thor'
+
+require 'wedding/bride'
+require 'wedding/groom'
+require 'wedding/ceremony'
+require 'wedding/default_config'
 
 module Wedding
 
   class << self
 
-    # Public: Sets the default options used when calling Wedding#new.
+    # Sets the default options used when calling Wedding#new.
     attr_writer :default_config
-    
+
+    # There is a weddig, there is a ceremony. Time for celebrations.
+    attr_accessor :ceremony
+
+
     # Returns new Ceremony object that can be used to query details
     #   about the wedding
     # @param [Hash] config A hash of config values for wedding. Check
@@ -18,9 +26,11 @@ module Wedding
       Ceremony.new(config)
     end
   
+    # Getter method for default_config for the wedding.
     def default_config
       DefaultConfig.options
     end
+
 
   end
 

@@ -1,6 +1,13 @@
-module Wedding 
+require 'cgi'
+
+module Wedding
+  # The magic happens here
+  # Sing, dance, eat and enjpoy
   class Ceremony
 
+    # Time to set the things in the right direction
+    # Groom, bride, location, date and event schedule.
+    # @param [Hash] config configuration object for the constructor
     def initialize(config)
       @groom = Wedding::Groom.new(config)
       @bride = Wedding::Bride.new(config)
@@ -9,35 +16,62 @@ module Wedding
       @event_schedule = config[:event_schedule]
     end
 
+    # We need to access what we have set earlier
     attr_reader :groom, :bride, :location, :event_schedule, :date
 
-    def map_location
-      Launchy.open("http://maps.google.com")
+    # Where is it taking place?
+    def coordinates
+      @location
     end
 
+    # Lets have a more readable format of coordinates method
+    def location
+      "https://maps.google.com/?q=" + CGI.escape(coordinates)
+    end
+
+    # Event schedule goes here
     def events
-      #Pretty Print event schedule
+      @event_schedule.join("\n")
     end
 
     # forms a pretty invitation card for the wedding
     def invitation
-      %Q[
-        ========= Wedding invitation ==========
-        
-        --------- #{groom.name} with #{bride.name} ---------
+      invitation = %Q[
+========= Wedding invitation ==========
 
-        We are getting married on 29th November 2013. It would
-        be our pleausre have your presence in the wedding ceremony.
+--------- #{groom.name} with #{bride.name} ---------
 
-        Event schedule:
 
-        #{events}
+Hi #{`whoami`}
+
+We are getting married on #{date}. It will
+be a great pleausre for us to have your presence
+in the wedding ceremony.
+
+Event schedule:
+
+#{events}
       ]
+
+    rescue StandardError => e
+
+      invitation = %Q[
+========= Wedding invitation ==========
+
+Looks like something went wrong here, did you you fake
+the invitation?
+
+      ]
+
     end
 
-    # not implemented
+    # RSVP for the event
     def rsvp
-
+      invitation = %Q[
+You can RSVP for the event by sending an email to
+#{groom.name} (#{groom.email}) 
+or #{prerita.name} (#{prerita.email})
+      ]
     end
   end
 end

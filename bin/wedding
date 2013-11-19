@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'wedding'
+require 'wedding/cli'
+Wedding::CLI.start

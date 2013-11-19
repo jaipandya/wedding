@@ -1,7 +1,8 @@
-module Wedding
-  module DefaultConfig
-    def self.options
-      {
+require 'wedding'
+
+describe "Wedding#default_config" do
+  it "returns default config options" do
+    Wedding.default_config.should eql({
         :groom_name => "Jai",
         :groom_about => "Programmer, Traveller, Photographer, Biker, SlideShare Engineer",
         :groom_occupation => "Hacker at SlideShare",
@@ -17,7 +18,22 @@ module Wedding
           "12:00 pm Fere"
         ],
         :date => "29 November 2013"
-      }
-    end
+      }) 
   end
+end
+
+describe "Wedding::Ceremony" do
+  
+  it "correctly initializes all the instance variables" do
+  end
+  
+  it "launches the browser for map location" do
+  end
+
+  it "prints an awesome invitation message" do
+  end
+
+  it 'RSVPs for the event' do
+  end
+
 end
