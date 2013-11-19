@@ -1,6 +1,8 @@
 # Wedding
 
-What could be a weddding without a gem?
+How would be a weddding without a gem?
+
+<img src='http://i.imgur.com/4i856yX.png' alt='screenshot' width='600' />
 
 A fun experiment to invite my geeky friends
 via this ruby gem.
