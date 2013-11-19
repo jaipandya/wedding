@@ -1,13 +1,19 @@
 # Wedding
 
-How would be a weddding without a gem?
+> How would be a weddding without a gem?
 
-<img src='http://i.imgur.com/4i856yX.png' alt='screenshot' width='600' />
+<img src='http://i.imgur.com/Ap02gKh.png' alt='screenshot' width='600' />
+
+## Overview
 
 A fun experiment to invite my geeky friends
 via this ruby gem.
 
 ## Installation
+
+Command line install
+
+    $ gem install wedding
 
 Add this line to your application's Gemfile:
 
@@ -17,15 +23,11 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install wedding
-
 ## Usage
 
 ### Command Line
 
-List all available commands
+List of all available commands
 
     wedding
 

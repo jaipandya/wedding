@@ -16,7 +16,7 @@ module Wedding
           " 8:00 pm Barat reaches venue",
           "12:00 pm Phere"
         ],
-        :date => "29 November 2013"
+        :date => "2013-11-29"
       }
     end
   end

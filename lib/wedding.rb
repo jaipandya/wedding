@@ -33,7 +33,6 @@ module Wedding
       DefaultConfig.options
     end
 
-
   end
 
 end

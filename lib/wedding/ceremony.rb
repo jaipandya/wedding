@@ -1,5 +1,7 @@
 require 'cgi'
 require 'artii'
+require 'date'
+require 'rainbow'
 
 module Wedding
   # The magic happens here
@@ -13,7 +15,7 @@ module Wedding
       @groom = Wedding::Groom.new(config)
       @bride = Wedding::Bride.new(config)
       @location = config[:location]
-      @date = (config[:date])
+      @date = Date.parse(config[:date])
       @event_schedule = config[:event_schedule]
 
       @artii = Artii::Base.new :font => 'slant'
@@ -22,41 +24,49 @@ module Wedding
     # We need to access what we have set earlier
     attr_reader :groom, :bride, :location, :event_schedule, :date
 
-    # Where is it taking place?
+    # Venue coordinates
     def coordinates
       @location
     end
 
     # Lets have a more readable format of coordinates method
+    # with a URL to google maps
     def location
       "https://maps.google.com/?q=" + CGI.escape(coordinates)
     end
 
-    # Event schedule goes here
+    # Number of days left
+    def days_left
+      (date - Date.today)
+    end
+
+    # Event schedule
     def events
       @event_schedule.join("\n")
     end
 
-    # forms a pretty invitation card for the wedding
+    # Forms a pretty invitation card for the wedding
     def invitation
       invitation = %Q[
-#{print_ganesha}
+#{print_ganesha.color(:green)}
 ========= Wedding invitation ==========
 
-#{@artii.asciify(groom.name)}  
+#{@artii.asciify(groom.name).color(:blue)}  
     with
-#{@artii.asciify(bride.name)}
+#{@artii.asciify(bride.name).color(:blue)}
 
 
-Hi #{`whoami`}
+Hi #{`whoami`.strip.capitalize}
 
-We are getting married on #{date}. It will
+We are getting married on #{date.strftime("%d %B %y")}. It will
 be a great pleausre for us to have your presence
 in the wedding ceremony.
 
 Event schedule:
 
 #{events}
+
+Pack your bags! Only #{days_left.to_s.color(:red)} days left.
       ]
 
     rescue StandardError => e
@@ -71,9 +81,9 @@ the invitation?
 
     end
 
-    # http://en.wikipedia.org/wiki/Ganesha
     # In Hindu mythology it is a custom to start 
     # anything new worshipping lord Ganesha
+    # http://en.wikipedia.org/wiki/Ganesha
     def print_ganesha
       ganesh = %Q[
                  _.!._           
