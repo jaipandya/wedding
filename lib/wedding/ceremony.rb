@@ -109,9 +109,9 @@ the invitation?
     # RSVP for the event
     def rsvp
       invitation = %Q[
-You can RSVP for the event by sending an email to
-#{groom.name} (#{groom.email}) 
-or #{bride.name} (#{bride.email})
+You can RSVP to the event by sending an email to
+#{groom.name.color(:blue)} (#{groom.email.color(:green)}) 
+or #{bride.name.color(:blue)} (#{bride.email.color(:green)})
       ]
     end
   end
