@@ -1,4 +1,5 @@
 $(function() {
+    $('.j-tooltip').tooltip();
     var gem_install_message_pre = "\
 Fetching: addressable-2.3.5.gem (100%)\
 \nFetching: launchy-2.3.0.gem (100%)\
@@ -134,7 +135,8 @@ Commands: \
 \nOnce the gem is installed, type [[b;#859900;]wedding] in the terminal to see the list of\
 \navailable commands. \
 \n \
-  ";
+\nThe gem is available for download at https://rubygems.org/gems/wedding \
+\n  ";
 
     var gem_list_empty = '\n*** LOCAL GEMS ***\n';
     var gem_list_full = '\n*** LOCAL GEMS ***\n\naddressable (2.3.5)\nlaunchy (2.3.0)\nrequire_all (1.3.2)\nthor (0.18.1)\nartii (2.0.3)\nrainbow (1.1.4)\nwedding (0.0.1)\n';
@@ -203,13 +205,17 @@ Commands: \
       } else if (inputs[1] === "groom") {
         term.echo(groom)
       } else if (inputs[1] === "invitation") {
-        term.echo(ganesha);
+        term.echo("[[;#b58900;]"+ganesha+ "]");
         term.echo(invitation_pre);
         term.pause();
         setTimeout(function(){
           term.resume();
           term.echo(jai_weds_prerita);
-          term.echo(invitation_post);
+          term.pause();
+          setTimeout(function(){
+            term.resume();
+            term.echo(invitation_post);
+          }, 400)
         }, 1500)
         
       } else if (inputs[1] === "location") {
