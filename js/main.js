@@ -10,7 +10,7 @@ $(function() {
 \n\
 \n==== Release notes for wedding gem ====\
 \n\
-\nNow that you have installed this gem, you earn our immence respect.\
+\nNow that you have installed this gem, you earn our immense respect.\
 \nYou are the star guest of our wedding, you will receive our special\
 \nattention.\
 \n    Go ahead and type `wedding` (wihtout backticks) on the command\
@@ -75,7 +75,7 @@ $(function() {
 \nHi,\
 \n\
 \nWe are getting married on 29 November 13. It will \
-\nbe a great pleausre for us to have your presence  \
+\nbe a great pleasure for us to have your presence  \
 \nin the wedding ceremony.                          \
 \n                                                  \
 \nEvent schedule:                                   \

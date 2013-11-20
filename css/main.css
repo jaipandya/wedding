@@ -381,19 +381,6 @@ line-height: 1.5em;
 	100% {  background:rgba(99,222,0,0);  }
 }
 .cursor {
-  background:#63de00; 
-  display:inline-block;
-  width:11px;
-  height:19px;
-  margin-bottom:-3px;
-}
-#body:hover .cursor {
-    -webkit-animation-name: blink;
-    -webkit-animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation-name: blink;
-    -moz-animation-duration: 1.5s;
-    -moz-animation-iteration-count: infinite;
 }
   
 #body p::-webkit-selection  {
