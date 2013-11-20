@@ -1,26 +1,27 @@
 $(function() {
-    var gem_install_message = "\
-\nFetching: addressable-2.3.5.gem (100%)\
+    var gem_install_message_pre = "\
+Fetching: addressable-2.3.5.gem (100%)\
 \nFetching: launchy-2.3.0.gem (100%)\
 \nFetching: require_all-1.3.2.gem (100%)\
 \nFetching: thor-0.18.1.gem (100%)\
 \nFetching: artii-2.0.3.gem (100%)\
 \nFetching: rainbow-1.1.4.gem (100%)\
 \nFetching: wedding-0.0.1.gem (100%)\
-\n\
-\n==== Release notes for wedding gem ====\
+\n ";
+    var gem_install_message_post = "\
+\n[[b;#d33682;]==== Release notes for wedding gem ====]\
 \n\
 \nNow that you have installed this gem, you earn our immense respect.\
 \nYou are the star guest of our wedding, you will receive our special\
 \nattention.\
-\n    Go ahead and type `wedding` (wihtout backticks) on the command\
+\n    Go ahead and type [[b;#859900;]wedding] (wihtout backticks) on the command\
 \nprompt to see the list of commands available with it. Print your\
 \npersonal invitation, and fire your browser to see the location of\
 \nthe event. We love you!\
 \n\
-\nPrerita and Jai\
+\n[[b;#b58900;]Prerita and Jai]\
 \n\
-\n=======================================\
+\n[[b;#d33682;]=======================================]\
 \n\
 \nSuccessfully installed addressable-2.3.5\
 \nSuccessfully installed launchy-2.3.0\
@@ -31,8 +32,14 @@ $(function() {
 \nSuccessfully installed wedding-0.0.1\
 \n7 gems installed\
 \n    ";
-    var prompt = "[root@wedding ~]$ ";
+    var prompt = "[[b;#d33682;]root]@[[b;#6c71c4;]wedding] ~$ ";
     var wedding_url = "http://goo.gl/4tqfMs";
+    var venue_address = "\
+Gandhi Nagar Club Gardens\
+\n(Near Gandhi Nagar Girls' School),\
+\nGandhi Nagar, Jaipur\
+\nPin - 302015\
+    "
     var ganesha = "\
 \n                 _.!._             \
 \n                /O*@*O\\           \
@@ -54,7 +61,7 @@ $(function() {
 \n          \
   ";
   var invitation_pre = "\
-\n========= Wedding invitation ==========\
+\n[[b;#d33682;]========= Wedding invitation ==========]\
   ";
   var jai_weds_prerita = "\
 \n       __      _    \
@@ -84,19 +91,19 @@ $(function() {
 \n 8:00 pm Barat reaches venue                      \
 \n12:00 pm Phere                                    \
 \n\
-\nPack your bags! Only " + (29 - (new Date()).getDate()) + " days left.                 \
+\nPack your bags! Only [[b;#cb4b16;]" + (29 - (new Date()).getDate()) + "] days left.                 \
 \n\
   ";
     var wedding_help = "\
 Commands: \
-\n\twedding bride           # Glory words about the bride \
-\n\twedding groom           # Glory words about the groom \
-\n\twedding invitation      # Your invitation card is inside this envelope \
-\n\twedding location        # Google maps link to the wedding venue \
-\n\twedding rsvp            # RSVP for the event\
+\n\t[[b;#268bd2;]wedding invitation]      [[b;#2aa198;]# Your invitation card is inside this envelope] \
+\n\t[[b;#268bd2;]wedding bride]           [[b;#2aa198;]# Glory words about the bride] \
+\n\t[[b;#268bd2;]wedding groom]           [[b;#2aa198;]# Glory words about the groom] \
+\n\t[[b;#268bd2;]wedding location]        [[b;#2aa198;]# Google maps link to the wedding venue] \
+\n\t[[b;#268bd2;]wedding rsvp]            [[b;#2aa198;]# RSVP for the event]\
   ";
     var bride = "\
-\n========= Bride ==========\
+\n[[b;#d33682;]========= Bride ==========]\
 \n\
 \nThe bride's name is Prerita\
 \nShe is a Banker, Traveller, Dancer, Painter, Dreamer\
@@ -106,7 +113,7 @@ Commands: \
 \n\
   ";
     var groom = "\
-\n========= Groom ==========\
+\n[[b;#d33682;]========= Groom ==========]\
 \n\
 \nThe groom's name is Jai\
 \nHe is a Programmer, Traveller, Photographer, Biker, SlideShare Engineer\
@@ -123,8 +130,8 @@ Commands: \
   ";
     var greetings = jai_weds_prerita + "\
 \n\nWelcome to Prerita and Jai's wedding website. In order to retrieve your \
-\ninvitation, first install wedding gem using `gem install wedding` command.\
-\nOnce the gem is installed, type `wedding` in the terminal to see the list of\
+\ninvitation, first install wedding gem using [[b;#859900;]gem install wedding] command.\
+\nOnce the gem is installed, type [[b;#859900;]wedding] in the terminal to see the list of\
 \navailable commands. \
 \n \
   ";
@@ -135,6 +142,25 @@ Commands: \
 
     var print_gem = 'RubyGems is a sophisticated package manager for Ruby.  This is a\nbasic help message containing pointers to more information.\n\n  Usage:\n    gem -v\n    gem command [arguments...] [options...]\n\n  Examples:\n    gem install rake\n    gem list --local\n    gem build package.gemspec\n    gem help install\n\n  Further help:\n    gem help commands            list all \'gem\' commands\n    gem help examples            show some examples of usage\n    gem help platforms           show information about platforms\n    gem help <COMMAND>           show help on COMMAND\n                                   (e.g. \'gem help install\')\n    gem server                   present a web page at\n                                 http://localhost:8808/\n                                 with info about installed gems\n  Further information:\n    http://rubygems.rubyforge.org';
 
+    function print_slowly(term, paragraph, callback) {
+      var foo, i, lines;
+      lines = paragraph.split("\n");
+      term.pause();
+      i = 0;
+      foo = function(lines) {
+        return setTimeout((function() {
+          if (i < lines.length -1) {
+            term.echo(lines[i]);
+            i++;
+            return foo(lines);
+          } else {
+            term.resume();
+            return callback();
+          }
+        }), 1000);
+      };
+      return foo(lines);
+    };
     function require_command(command_regex, terminal_history) {
       var executed = false;
       $.each(terminal_history, function(index, value){
@@ -153,7 +179,9 @@ Commands: \
       if (!inputs[1]) {
         term.echo(print_gem);
       } else if (inputs[1] === 'install' && inputs[2] === 'wedding') {
-        term.echo(gem_install_message);
+        print_slowly(term, gem_install_message_pre, function(){
+          term.echo(gem_install_message_post)
+        });
       } else if (inputs[1] === '-v') {
         term.echo('1.3.6');
       } else if (inputs[1] == 'list') {
@@ -177,9 +205,15 @@ Commands: \
       } else if (inputs[1] === "invitation") {
         term.echo(ganesha);
         term.echo(invitation_pre);
-        term.echo(jai_weds_prerita);
-        term.echo(invitation_post);
+        term.pause();
+        setTimeout(function(){
+          term.resume();
+          term.echo(jai_weds_prerita);
+          term.echo(invitation_post);
+        }, 1500)
+        
       } else if (inputs[1] === "location") {
+        term.echo(venue_address);
         term.echo(wedding_url);
         term.push(function(command, term) {
           if (/y(es){0,1}/.test(command)) {
@@ -207,7 +241,7 @@ Commands: \
       command = inputs[0];
       if (command === "gem") {
         gem(inputs, term);
-      } else if (command === "wedding") {
+      } else if (command === "wedding" || command === "help") {
         window.terminal = term;
         if (require_command(gem_install_regex, term.history().data())){
           wedding(inputs, term)
@@ -260,7 +294,5 @@ Commands: \
       },
       tabcompletion: true
     });
-
-    
 
 });

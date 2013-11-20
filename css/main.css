@@ -358,7 +358,7 @@ line-height: 1.5em;
     float: left;
     width: 100%;
     min-height:130px;
-    background:#000;
+    background:#002b36;
     padding:10px;
     line-height:1.5em;
 }
@@ -381,6 +381,9 @@ line-height: 1.5em;
 	100% {  background:rgba(99,222,0,0);  }
 }
 .cursor {
+    width: 2px;
+    margin-left: 2px;
+    color: #fff;
 }
   
 #body p::-webkit-selection  {
