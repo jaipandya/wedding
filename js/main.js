@@ -91,7 +91,6 @@ $(function() {
 Commands: \
 \n\twedding bride           # Glory words about the bride \
 \n\twedding groom           # Glory words about the groom \
-\n\twedding help [COMMAND]  # Describe available commands or one specific command \
 \n\twedding invitation      # Your invitation card is inside this envelope \
 \n\twedding location        # Google maps link to the wedding venue \
 \n\twedding rsvp            # RSVP for the event\
@@ -124,9 +123,9 @@ Commands: \
   ";
     var greetings = jai_weds_prerita + "\
 \n\nWelcome to Prerita and Jai's wedding website. In order to retrieve your \
-\ninvitation, first install wedding gem using `gem install wedding` (without \
-\nbackticks) command. Once the gem is installed, type `help` in the terminal \
-\nto see the list of available commands. \
+\ninvitation, first install wedding gem using `gem install wedding` command.\
+\nOnce the gem is installed, type `wedding` in the terminal to see the list of\
+\navailable commands. \
 \n \
   ";
 
