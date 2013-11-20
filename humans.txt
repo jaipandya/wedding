@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jai Pandya -- Developer -- @jaipandya
+
+# THANKS
+
+    Shishir Sharma
+    Vishu Singh
+    Atul Purohit
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr
+    jQuery Terminal Plugin
