@@ -59,7 +59,7 @@ module Wedding
 Hi #{`whoami`.strip.capitalize}
 
 We are getting married on #{date.strftime("%d %B %y")}. It will
-be a great pleausre for us to have your presence
+be a great pleasure for us to have your presence
 in the wedding ceremony.
 
 Event schedule:

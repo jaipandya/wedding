@@ -5,7 +5,7 @@ module Wedding
 
 ==== Release notes for wedding gem ====
 
-Now that you have installed this gem, you earn our immence respect.
+Now that you have installed this gem, you earn our immense respect.
 You are the star guest of our wedding, you will receive our special
 attention.
     Go ahead and type `wedding` (wihtout backticks) on the command

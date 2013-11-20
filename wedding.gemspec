@@ -15,7 +15,7 @@ an invite for my wedding. The gem is generic in nature that accepts a configurat
 object to work on.
 EOS
   spec.summary       = %q{I created this gem for inviting friends to my wedding.}
-  spec.homepage      = "http://github.com/jaipandya/wedding"
+  spec.homepage      = "http://jaipandya.github.io/wedding"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
