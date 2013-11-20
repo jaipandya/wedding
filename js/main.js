@@ -15,7 +15,7 @@ Fetching: addressable-2.3.5.gem (100%)\
 \nNow that you have installed this gem, you earn our immense respect.\
 \nYou are the star guest of our wedding, you will receive our special\
 \nattention.\
-\n    Go ahead and type [[b;#859900;]wedding] (wihtout backticks) on the command\
+\n    Go ahead and type [[b;#859900;]wedding] on the command\
 \nprompt to see the list of commands available with it. Print your\
 \npersonal invitation, and fire your browser to see the location of\
 \nthe event. We love you!\
