@@ -92,7 +92,7 @@ Gandhi Nagar Club Gardens\
 \n\
 \n 7:00 pm Barat starts from Home                   \
 \n 8:00 pm Barat reaches venue                      \
-\n12:00 pm Phere                                    \
+\n12:00 am Phere                                    \
 \n\
 \nPack your bags! Only [[b;#cb4b16;]" + (29 - (new Date()).getDate()) + "] days left.                 \
 \n\
