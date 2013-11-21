@@ -272,6 +272,8 @@ Commands: \
         bash(inputs, term)
       } else if (input === "ruby -v"){
         term.echo("1.9.3")
+      } else if (command.length === 0) {
+        // do nothing
       } else {
         term.error(command + " is not a valid command")
       }
