@@ -36,6 +36,7 @@ Fetching: addressable-2.3.5.gem (100%)\
 \n    ";
     var prompt = "[[b;#d33682;]root]@[[b;#6c71c4;]wedding] ~$ ";
     var wedding_url = "http://goo.gl/4tqfMs";
+    var rsvp_url = "https://jai.typeform.com/to/meTQuI";
     var venue_address = "\
 Gandhi Nagar Club Gardens\
 \n(Near Gandhi Nagar Girls' School),\
@@ -238,6 +239,16 @@ Commands: \
         });
       } else if (inputs[1] === "rsvp") {
         term.echo(rsvp)
+        term.push(function(command, term) {
+          window.open(
+              rsvp_url,
+              '_blank' // <- This is what makes it open in a new window.
+          );
+          term.pop();
+        }, {
+          prompt: 'alternatively fill the form that you\'ll see when you press [[b;#859900;]enter (↩)]',
+          greetings: null
+        });
       } else {
         term.error(inputs.join(" ") + " is not a valid command")
       }
