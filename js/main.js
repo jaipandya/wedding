@@ -246,7 +246,7 @@ Commands: \
           );
           term.pop();
         }, {
-          prompt: 'alternatively fill the form that you\'ll see in a new window \nwhen you press [[b;#859900;]enter (↩)]',
+          prompt: 'alternatively fill the form that you\'ll see in a new window when you press [[b;#859900;]enter (↩)]',
           greetings: null
         });
       } else {
