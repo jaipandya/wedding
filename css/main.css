@@ -2,7 +2,9 @@
 which made it child's play to make it look good */
 
 body { 
-    background:#d2dfe6;
+    background:#d2dfe6 url('../img/main-bg.jpg') 0 0 no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
     padding-top: 50px;
     padding-bottom: 20px;
     color: #444;
@@ -13,19 +15,23 @@ body {
 /* FINDER WINDOW */
 
 #window{
-    width: 90%;
-    max-width: 900px;
-    height: 620px;
-    margin-top:40px;
-	margin-left: auto;
-	margin-right: auto;
-    margin-bottom:40px;
-    background: #002b36;
-    border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
+    margin-left: auto;
+    margin-right: auto;
     -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
     /*-webkit-transition:all 0.5s; */
+    background: rgba(0, 43, 54, 0.82);
+    border-radius: 5px;
+    height: 620px;
+    margin-bottom:40px;
+    margin-top:40px;
+    max-width: 900px;
     overflow: hidden; 
+    width: 90%;
+}
+
+#window #terminal {
+    background-color: transparent;
 }
 
 /* TOP BAR */
