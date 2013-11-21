@@ -14,7 +14,7 @@ module Wedding
         :event_schedule => [
           " 7:00 pm Barat starts from Home",
           " 8:00 pm Barat reaches venue",
-          "12:00 pm Phere"
+          "12:00 am Phere"
         ],
         :date => "2013-11-29"
       }
