@@ -2,7 +2,7 @@
 which made it child's play to make it look good */
 
 body { 
-    background:#d2dfe6 url('../img/main-bg.jpg') 0 0 no-repeat;
+    background:#d2dfe6 url('../img/main-bg.jpg') center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     padding-top: 50px;

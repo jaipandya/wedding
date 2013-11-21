@@ -229,7 +229,7 @@ Commands: \
           if (/y(es){0,1}/.test(command)) {
             window.open(
               wedding_url,
-              '_blank' // <- This is what makes it open in a new window.
+              '_blank'
             );
           }
           term.pop();
@@ -242,11 +242,11 @@ Commands: \
         term.push(function(command, term) {
           window.open(
               rsvp_url,
-              '_blank' // <- This is what makes it open in a new window.
+              '_blank'
           );
           term.pop();
         }, {
-          prompt: 'alternatively fill the form that you\'ll see when you press [[b;#859900;]enter (↩)]',
+          prompt: 'alternatively fill the form that you\'ll see in a new window \nwhen you press [[b;#859900;]enter (↩)]',
           greetings: null
         });
       } else {
