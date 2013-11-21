@@ -137,6 +137,8 @@ Commands: \
 \navailable commands. \
 \n \
 \nThe gem is available for download at https://rubygems.org/gems/wedding \
+\n
+\nPress [[b;#859900;]enter (↩)] to install the gem on this terminal.
 \n  ";
 
     var gem_list_empty = '\n*** LOCAL GEMS ***\n';
