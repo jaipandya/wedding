@@ -36,7 +36,7 @@ Fetching: addressable-2.3.5.gem (100%)\
 \n    ";
     var prompt = "[[b;#d33682;]root]@[[b;#6c71c4;]wedding] ~$ ";
     var wedding_url = "http://goo.gl/4tqfMs";
-    var rsvp_url = "https://jai.typeform.com/to/meTQuI";
+    var rsvp_url = "https://twitter.com/jaipandya";
     var venue_address = "\
 Gandhi Nagar Club Gardens\
 \n(Near Gandhi Nagar Girls' School),\
@@ -121,8 +121,10 @@ Commands: \
 \nThe groom's name is Jai\
 \nHe is a Programmer, Traveller, Photographer, Biker, SlideShare Engineer\
 \nHe works as a Hacker at SlideShare\
-\nIf you want to contact him, his email ID\
-\nis jaipandya@gmail.com\
+\nemail - jaipandya@gmail.com\
+\nlinkedin - https://www.linkedin.com/in/jaipandya \
+\ntwitter - https://twitter.com/jaipandya \
+\ngithub - https://github.com/jaipandya \
 \n\
   ";
     var rsvp = "\
@@ -246,7 +248,7 @@ Commands: \
           );
           term.pop();
         }, {
-          prompt: 'alternatively fill the form that you\'ll see in a new window when you press [[b;#859900;]enter (↩)]',
+          prompt: 'alternatively send me a tweet in a new window when you press [[b;#859900;]enter (↩)]',
           greetings: null
         });
       } else {
@@ -263,19 +265,25 @@ Commands: \
         gem(inputs, term);
       } else if (command === "wedding" || command === "help") {
         window.terminal = term;
-        if (require_command(gem_install_regex, term.history().data())){
-          wedding(inputs, term)
+        if (require_command(gem_install_regex, term.history().data())) {
+          wedding(inputs, term);
         } else {
-          term.error('Please install the gem first by executing\ngem install wedding')
+          term.error('Please install the gem first by executing\ngem install wedding');
         }
       } else if (/(cd)|(ls)|(cat)/.test(command)) {
-        bash(inputs, term)
+        bash(inputs, term);
       } else if (input === "ruby -v"){
-        term.echo("1.9.3")
+        term.echo("1.9.3");
+      } else if (/which +wedding/.test(input)) {
+        if (require_command(gem_install_regex, term.history().data())) {
+          term.echo("/usr/bin/wedding");
+        } // else do nothing
+      } else if (/whoami/.test(input)) {
+        term.echo("root");
       } else if (command.length === 0) {
         // do nothing
       } else {
-        term.error(command + " is not a valid command")
+        term.error(command + " is not a valid command");
       }
     }
 
