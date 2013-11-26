@@ -392,8 +392,8 @@ body {
 	100% {  background:rgba(99,222,0,0);  }
 }
 .cursor {
-    width: 2px;
-    margin-left: 2px;
+    width: 10px;
+    margin-left: 0px;
     color: #fff;
 }
   
