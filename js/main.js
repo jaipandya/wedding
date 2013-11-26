@@ -35,6 +35,7 @@ Fetching: addressable-2.3.5.gem (100%)\
 \n7 gems installed\
 \n    ";
     var prompt = "[[b;#d33682;]root]@[[b;#6c71c4;]wedding] ~$ ";
+    var days_left = Math.round((new Date('2013 11 29') - new Date())/(1000*60*60*24));
     var wedding_url = "http://goo.gl/4tqfMs";
     var rsvp_url = "https://twitter.com/jaipandya";
     var venue_address = "\
@@ -94,7 +95,7 @@ Gandhi Nagar Club Gardens\
 \n 8:00 pm Barat reaches venue                      \
 \n12:00 am Phere                                    \
 \n\
-\nPack your bags! Only [[b;#cb4b16;]" + (29 - (new Date()).getDate()) + "] days left.                 \
+\nPack your bags! Only [[b;#cb4b16;]" + days_left + "] days left.                 \
 \n\
   ";
     var wedding_help = "\
@@ -133,7 +134,16 @@ Commands: \
 \nor Prerita (preritayadav@gmail.com)\
 \n        \
   ";
-    var greetings = jai_weds_prerita + "\
+    var you_are_late = "\
+Sorry, you are slightly late for attending the event. \
+\nJai and Prerita have already got married on 29th November \
+\nBut this site will remain here for archival purpose. \
+\nRoam around happily :-) \
+\n  "
+    if (days_left >= 0) {
+      you_are_late = ''
+    }
+    var greetings = you_are_late + jai_weds_prerita + "\
 \n\nWelcome to Prerita and Jai's wedding website. In order to retrieve your \
 \ninvitation, first install wedding gem using [[b;#859900;]gem install wedding] command.\
 \nOnce the gem is installed, type [[b;#859900;]wedding] in the terminal to see the list of\
