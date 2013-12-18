@@ -1,6 +1,6 @@
 # Wedding
 
-> How would be a weddding without a gem?
+> How would be a wedding without a gem?
 
 <img src='http://i.imgur.com/Ap02gKh.png' alt='screenshot' width='600' />
 
