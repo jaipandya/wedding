@@ -84,3 +84,7 @@ Access the bride 'object'
 RSVP information about the event
 
     wedding.rsvp
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jaipandya/wedding/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
